@@ -22,8 +22,12 @@
   },
   "homepage": "https://github.com/rong8296-practice/typescript-in-node#readme",
   "devDependencies": {
-    "@types/node": "^10.12.9",
+    "@types/node": "^10.12.10",
+    "@types/os-name": "^2.0.0",
     "del-cli": "^1.1.0",
     "typescript": "^3.1.6"
+  },
+  "dependencies": {
+    "os-name": "^3.0.0"
   }
 }

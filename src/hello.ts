@@ -1,3 +1,10 @@
+import {platform} from 'os'
+console.log(platform())
+
+
+import osname from 'os-name'
+console.log(osname())
+
 class Student {
   fullName: string
   constructor(
@@ -22,4 +29,4 @@ let user = new Student("Jane", "M.", "User")
 
 console.log(user.middleInitial)
 console.log(greeter(user))
-let strLength: number = (<string>'52').length
+// let strLength: number = (<string>'52').length
