@@ -1,9 +1,12 @@
-import {platform} from 'os'
-console.log(platform())
+// import {platform} from 'os'
+// console.log(platform())
+
+import osName from './my-mod'
+console.log('osName', osName)
 
 
 import osname from 'os-name'
-console.log(osname())
+console.log('osname()', osname())
 
 class Student {
   fullName: string
