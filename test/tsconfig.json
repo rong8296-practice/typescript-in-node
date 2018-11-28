@@ -1,7 +1,16 @@
 {
   "extends": "../tsconfig.base",
   "compilerOptions": {
-    "outDir": "../dist/test"
+    "outDir": "../dist/test",
+    "rootDirs": [
+      "../src",
+      "../"
+    ]
   },
+  "references": [
+    {
+      "path": "../src"
+    }
+  ],
   "include": ["./**/*"]
 }
