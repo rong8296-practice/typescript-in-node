@@ -10,7 +10,6 @@
     "strict": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "composite": true,
-    "traceResolution": true
+    "composite": true
   }
 }
