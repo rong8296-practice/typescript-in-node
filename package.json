@@ -4,10 +4,14 @@
   "description": "typescript in node",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "original-test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
-    "tsc": "tsc -b",
-    "s": "run-s clean tsc"
+    "task:test": "tsc -b test --watch",
+    "task:release": "tsc -p src/tsconfig.release.json",
+    "task:tsc": "tsc -b",
+    "test": "run-s clean task:test",
+    "release": "run-s clean task:release",
+    "tsc": "run-s clean task:tsc"
   },
   "repository": {
     "type": "git",
