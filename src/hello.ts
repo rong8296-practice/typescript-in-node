@@ -32,4 +32,11 @@ let user = new Student("Jane", "M.", "User")
 
 console.log(user.middleInitial)
 console.log(greeter(user))
+
+enum Colors {red = -1, green, blue = -2, yellow = 0}
+
+// const Color: Colors = Colors.green
+console.log('Color', Colors.red, Colors.green, Colors.blue, Colors.yellow)
+console.log('reverse Color', Colors[-1], Colors[0], Colors[-2], Colors[0])
+
 // let strLength: number = (<string>'52').length
