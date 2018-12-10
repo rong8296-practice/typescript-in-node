@@ -40,3 +40,9 @@ console.log('Color', Colors.red, Colors.green, Colors.blue, Colors.yellow)
 console.log('reverse Color', Colors[-1], Colors[0], Colors[-2], Colors[0])
 
 // let strLength: number = (<string>'52').length
+
+function greet(someone: {name: string}) {
+  console.log('greet', `Hello ${someone.name}`)
+}
+
+greet({name: 'someone\'s name'})
