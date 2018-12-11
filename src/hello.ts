@@ -46,3 +46,59 @@ function greet(someone: {name: string}) {
 }
 
 greet({name: 'someone\'s name'})
+
+interface i1 {
+  [x: number]: string
+  [y: string]: string
+}
+
+const i1o: i1 = {
+  0: '0',
+  [Number('2')]: '2',
+  '1': '1'
+}
+
+console.log('i1o', i1o)
+
+interface i2 {
+  readonly name: string
+  age?: number
+  gender?: boolean
+}
+
+const i2o: i2 = {
+  name: 'name'
+}
+
+console.log('i2o', i2o)
+
+const i2o2: i2 = {
+  name: 'i2o2',
+  gender: false
+}
+console.log('i2o2', i2o2)
+
+
+interface if1 {
+  (p1: string, p2: number): boolean
+}
+
+const ifo: if1 = (str, len) => str.length === len
+
+console.log('ifo(\'str\', 3)', ifo('str', 3))
+console.log('ifo(\'str\', 4)', ifo('str', 4))
+
+interface idxi {
+  readonly [x: number]: string | boolean | number
+  [x: string]: string | number | boolean
+}
+
+const idxio: idxi = {
+  0: 0,
+  1: '1',
+  'a': true
+}
+console.log('idxio', idxio, typeof idxio[0], typeof idxio[1], typeof idxio.a)
+idxio.a = false
+// idxio[1] = 0
+console.log('idxio', idxio, typeof idxio[0], typeof idxio[1], typeof idxio.a)
