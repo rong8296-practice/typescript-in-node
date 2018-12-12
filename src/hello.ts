@@ -111,13 +111,102 @@ interface clock {
 
 class Clock implements clock {
   currentTime: Date
-  constructor(h: number, m: number) {
-    this.currentTime = new Date(h, m)
+  constructor(y: number, m: number, d: number) {
+    this.currentTime = new Date(y, m, d)
   }
   setTime(d: Date) {
     this.currentTime = d
   }
 }
 
-const clocko = new Clock(11, 11)
+const clocko = new Clock(2018, 11, 2)
 console.log('clocko', clocko)
+
+interface nc {
+  new (p1: string): nci
+}
+
+interface nci {
+  s: string
+  log(): void
+}
+
+class classnc implements nci {
+  s: string
+  constructor(s: string) {
+    this.s = s
+  }
+  log() {
+    console.log('this.s is', this.s);
+  }
+}
+
+function createnc(ctor: nc, s: string): nci {
+  return new ctor(s)
+}
+
+const nco = createnc(classnc, 'str')
+nco.log()
+
+
+interface a1 {
+  do(s: string): string
+}
+
+interface a2 {
+  s: string
+}
+
+interface a3 extends a1, a2 {
+  name: string
+}
+
+const a3o: a3 = {
+  do(s) {
+    return s + s
+  },
+  s: 'str',
+  name: 'a3o'
+}
+
+console.log('a3o.do(a3o.name)', a3o.do(a3o.name))
+
+interface c {
+  (n: number): number
+  do(n: number): number
+  who: string
+}
+
+const co: c = function(n) {
+  return n
+}
+co.who = 'who'
+co.do = function(n) {
+  return n * 2
+}
+console.log('co.who', co.who)
+console.log('co.do(co(3))', co.do(co(3)))
+
+class Control {
+  private state: number
+  constructor(state: number) {
+    this.state = state
+  }
+  read(): number {
+    return this.state
+  }
+}
+
+interface Selectable extends Control {
+  select(n: number): number[]
+}
+
+class Button extends Control implements Selectable {
+  select(n: number) {
+    return [n, n]
+  }
+}
+
+const btn = new Button(0)
+
+console.log('btn.select(btn.read())', btn.select(btn.read()))
