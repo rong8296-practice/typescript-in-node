@@ -102,3 +102,22 @@ console.log('idxio', idxio, typeof idxio[0], typeof idxio[1], typeof idxio.a)
 idxio.a = false
 // idxio[1] = 0
 console.log('idxio', idxio, typeof idxio[0], typeof idxio[1], typeof idxio.a)
+
+
+interface clock {
+  currentTime: Date
+  setTime(d: Date): void
+}
+
+class Clock implements clock {
+  currentTime: Date
+  constructor(h: number, m: number) {
+    this.currentTime = new Date(h, m)
+  }
+  setTime(d: Date) {
+    this.currentTime = d
+  }
+}
+
+const clocko = new Clock(11, 11)
+console.log('clocko', clocko)
