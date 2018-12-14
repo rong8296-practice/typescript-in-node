@@ -427,3 +427,11 @@ console.log('btn.select(btn.read())', btn.select(btn.read()))
   let greeter2: Greeter = new greeterMaker();
   console.log(greeter2.greet());
 })()
+
+;(function(): void {
+  function yoyo(this: any, age: number): void {
+    console.log(age)
+  }
+
+  yoyo.apply({name: 'yoyoname'}, [28])
+})()
