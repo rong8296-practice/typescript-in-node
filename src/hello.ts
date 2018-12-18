@@ -435,3 +435,59 @@ console.log('btn.select(btn.read())', btn.select(btn.read()))
 
   yoyo.apply({name: 'yoyoname'}, [28])
 })()
+
+;(function(): void {
+  function fn(s: string): number
+  function fn(s: number): string
+  function fn(s: any): any {
+    const type: string = typeof s
+    switch(type) {
+      case 'string':
+        return s.length
+      break;
+      case 'number':
+        return s.toString()
+      break;
+      default:
+        return 'you got a message'
+      break;
+    }
+  }
+
+  console.log('fn(3)', fn(3))
+  console.log('fn(\'three\')', fn('three'))
+
+
+  interface ifn {
+    (p1: string): number
+    (p1: number): string
+    (p1: any): any
+  }
+
+  const fn2: ifn = function(s: any): any {
+    const type: string = typeof s
+    switch(type) {
+      case 'string':
+        return s.length
+      break;
+      case 'number':
+        return s.toString()
+      break;
+      default:
+        return s
+      break;
+    }
+  }
+
+  console.log('fn2([2])', fn2([2]))
+  console.log('fn2(2)', fn2(2))
+  console.log('fn2(\'two\')', fn2('two'))
+
+  function doThat(this: any, n: number): string {
+    return `this.str.length === n => ${this.str.length === n}`
+  }
+
+  console.log('doThat.call({str: \'str\'}, 3)', doThat.call({str: 'str'}, 3))
+
+
+})()
