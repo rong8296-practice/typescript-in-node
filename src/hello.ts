@@ -491,3 +491,13 @@ console.log('btn.select(btn.read())', btn.select(btn.read()))
 
 
 })()
+
+;(function(): void {
+  enum Enum {
+    A = 1,
+    B,
+    C = 2
+  }
+  console.log('A, B, C', Enum.A, Enum.B, Enum.C)
+
+})()
