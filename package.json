@@ -11,7 +11,9 @@
     "task:tsc": "tsc -b",
     "test": "run-s clean task:test",
     "release": "run-s clean task:release",
-    "tsc": "run-s clean task:tsc"
+    "tsc": "run-s clean task:tsc",
+
+    "emit": "tsc my-ts.ts --outDir build"
   },
   "repository": {
     "type": "git",
@@ -27,14 +29,14 @@
   },
   "homepage": "https://github.com/rong8296-practice/typescript-in-node#readme",
   "devDependencies": {
-    "@types/node": "^11.9.3",
-    "@types/os-name": "^2.0.0",
+    "@types/node": "^14.0.14",
+    "@types/os-name": "^3.1.0",
     "npm-run-all": "^4.1.5",
-    "rimraf": "^2.6.3",
-    "tslib": "^1.9.3",
-    "typescript": "^3.3.3"
+    "rimraf": "^3.0.2",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.6"
   },
   "dependencies": {
-    "os-name": "^3.0.0"
+    "os-name": "^3.1.0"
   }
 }
