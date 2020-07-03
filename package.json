@@ -11,9 +11,7 @@
     "task:tsc": "tsc -b",
     "test": "run-s clean task:test",
     "release": "run-s clean task:release",
-    "tsc": "run-s clean task:tsc",
-
-    "emit": "tsc my-ts.ts --outDir build"
+    "tsc": "run-s clean task:tsc"
   },
   "repository": {
     "type": "git",
